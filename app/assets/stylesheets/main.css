@@ -27,3 +27,27 @@ h1 {
         background-position: 0 50%;
     }
 }
+
+ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 2rem;
+}
+
+li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: ease 0.5s;
+}
+
+a:hover {
+    color: white;
+    transition: ease 0.5s;
+}
