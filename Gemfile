@@ -11,6 +11,9 @@ gem "sprockets-rails"
 # Use sqlite3 as the database for Active Record
 gem "sqlite3", "~> 1.4"
 
+gem "haml-rails", "~> 2.0"
+gem "html2haml"
+
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", ">= 5.0"
 
@@ -41,6 +44,13 @@ gem "tzinfo-data", platforms: %i[ windows jruby ]
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 
+# Icons fonts
+gem "font-awesome-sass"
+gem "font-awesome-rails"
+
+# gem 'bootstrap'
+gem 'bootstrap-sass'
+
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
@@ -65,3 +75,28 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+# Use jquery as the JavaScript library
+gem 'jquery-ui-rails'
+gem 'jquery-rails'
+gem 'rails-asset-jqueryui'
+
+# Use Sass to process CSS
+gem 'sass-rails'
+
+group :development, :test do
+  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'byebug', platform: :mri
+
+  # Лучше отображает ошибки
+  gem "better_errors"
+  gem "binding_of_caller"
+end
+
+# Pagination
+# gem 'will_paginate'
+gem 'kaminari'
+
+
+
+gem 'mini_racer'

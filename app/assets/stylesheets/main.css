@@ -1,0 +1,29 @@
+html {
+    width: 100vw;
+    height: 100vh;
+}
+
+body {
+    font-family: Montserrat SemiBold, sans-serif;
+    background: linear-gradient(240deg, #129454, #ee4b4b, #446798);
+    background-size: 180% 180%;
+    animation: anim 12s ease infinite;
+    padding: 2rem;
+}
+
+h1 {
+    font-family: Montserrat Black, sans-serif;
+    text-transform: uppercase;
+}
+
+@keyframes anim {
+    0% {
+        background-position: 0 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0 50%;
+    }
+}
