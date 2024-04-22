@@ -1,0 +1,13 @@
+ => 
+[[32m#<User:0x00007fd6e476d988[0m
+  id: [34m[1m1[0m,
+  name: [31m[1m"[0m[31mIvan[0m[31m[1m"[0m,
+  email: [31m[1m"[0m[31mthemindvan@gmail.com[0m[31m[1m"[0m,
+  created_at: Mon, 22 Apr 2024 20:42:57.411820000 UTC +00:00,
+  updated_at: Mon, 22 Apr 2024 20:42:57.411820000 UTC +00:00[32m>[0m,
+ [32m#<User:0x00007fd6e476d848[0m
+  id: [34m[1m2[0m,
+  name: [31m[1m"[0m[31mTest[0m[31m[1m"[0m,
+  email: [31m[1m"[0m[31mitseroshin@gmail.com[0m[31m[1m"[0m,
+  created_at: Mon, 22 Apr 2024 20:45:54.924613000 UTC +00:00,
+  updated_at: Mon, 22 Apr 2024 20:45:54.924613000 UTC +00:00[32m>[0m] 

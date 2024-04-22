@@ -9,7 +9,7 @@ gem "rails", "~> 7.1.3", ">= 7.1.3.2"
 gem "sprockets-rails"
 
 # Use sqlite3 as the database for Active Record
-gem "sqlite3", "~> 1.4"
+# gem "sqlite3", "~> 1.4"
 
 gem "haml-rails", "~> 2.0"
 gem "html2haml"
@@ -96,6 +96,14 @@ end
 # Pagination
 # gem 'will_paginate'
 gem 'kaminari'
+
+# Use postgresql as the database for Active Record
+gem 'pg'
+# , '~> 0.18' - явное указание на версию gem 'activerecord-reset-pk-sequence'
+# Use ActiveModel has_secure_password
+gem 'bcrypt'
+gem 'active_model_serializers'
+gem 'activerecord-reset-pk-sequence'
 
 
 
