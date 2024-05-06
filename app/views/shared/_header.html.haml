@@ -1,15 +1,23 @@
 -# %body
 %header
-    -# %nav.navbar.navbar-expand-lg.navbar-light.bg-light
-    -# .container-fluid
-    -#     %a.navbar-brand{href: "#"} MyApp
-    -#     %button.navbar-toggler{type: "button", "data-bs-toggle" => "collapse", "data-bs-target" => "#navbarSupportedContent", "aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation"}
-    -#         %span.navbar-toggler-icon
-    -#     #navbarSupportedContent.collapse.navbar-collapse
-    -#         %ul.navbar-nav.me-auto.mb-2.mb-lg-0
-    -#             %li.nav-item
-    -#                 %a.nav-link{href: "#"} Home
-    -#             %li.nav-item
-    -#                 %a.nav-link{href: "#"} About
-    -#             %li.nav-item
-    -#                 %a.nav-link{href: "#"} Contact
+  %nav.navbar.navbar-dark.bg-dark.navbar-expand-lg
+    .container-fluid
+      %button.navbar-toggler{"aria-controls" => "navbarTogglerDemo03", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-bs-target" => "#navbarTogglerDemo03", "data-bs-toggle" => "collapse", type: "button"}
+        %span.navbar-toggler-icon
+
+      .d-flex
+        %a.navbar-brand.me-3.mb-1.d-flex.text-uppercase.align-items-center{:href => "#"}
+          %img{:alt => "Logo", :height => "30", :src => "assets/pictures/logo.svg", :width => "30"}/
+        #navbarTogglerDemo03.collapse.navbar-collapse
+
+          %ul.navbar-nav.me-auto.mb-2.mb-lg-0.d-flex.flex-row.gap-3
+            %li.nav-item
+              = link_to 'Ruby on Rails Website', 'http://rubyonrails.org', class: 'nav-link link-light'
+            %li.nav-item
+              = link_to 'Help', main_about_path, class: 'nav-link link-light'
+
+      %ul.navbar-nav.flex-row.gap-3
+        %li.nav-item.me-3.me-lg-1
+          %a.link-light{:href => "#"} Sign In
+        %li.nav-item.me-3.me-lg-1
+          %a.link-light{:href => "#"} Sign Up
