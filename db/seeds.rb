@@ -41,10 +41,3 @@ Theme.create([
                {name: "На сколько баллов вы оцениваете сложность грамматической конструкции?"},      # 6
                {name: "На сколько баллов вы оцениваете сложность данного языка?"},      # 7
              ])
-
-User.delete_all
-User.reset_pk_sequence
-User.create([
-
-              {name: "Example User", email: "example@railstutorial.org", password: "222222", password_confirmation: "222222"},
-            ])

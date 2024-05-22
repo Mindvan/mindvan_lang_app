@@ -1,0 +1,58 @@
+= render 'refreshing'
+= render 'jquery_file'
+
+.image.container.h-100.mt-3
+  .row.g-0.border.rounded.overflow-hidden.flex-md-row.mb-4.mt-4.shadow-sm.h-md-250.position-relative
+    .col-md-7.p-4.d-flex.flex-column.position-static
+      .left_controls.d-flex.gap-3.justify-content-center.align-items-md-baseline
+        .select_theme
+          = render 'button_theme_select', locale: @current_locale
+        .modal_list_results
+          = render 'button_list_results'
+          %br
+          %br
+        %span.total_values
+          = t('.total_values')
+          %span.total.text-muted{:title => "Total values"} #{@values_qty.round}
+        %span.common_value{style: "display: none;"}
+          = t('.common_value')
+          %span.common.text-muted{:title => "Common value"}
+        %br
+      .diag.mx-auto
+        .image_diag{style: "display: none;"}
+        %h2.d-inline.down{:title => "Value scale"}
+          = t('.make_decision')
+        %h2.text-muted.d-inline#chosen_value 50
+        #slider
+          %input.form-range#slide{:max => "100", :min => "5", :value => "50",
+                         :onchange => "updateSlider(this.value)",
+                         :step => "5", :type => "range"}
+        %br
+        = render 'button_save_decision'
+
+    .col-md-5.p-4
+      .image_display.float-end
+        .row.image.text-center
+          .col-md-12
+            %h4.display-7.m-auto.up-theme{:title => "Theme name"}
+              #{@selected_theme}
+
+          .col-md-12
+            .m-1.fs-5.text-muted.h1.up{:title => "Image name"}
+              #{@selected_image_name}
+
+          #carouselExampleDark.carousel.carousel-dark.slide{"data-ride" => "carousel"}
+            .carousel-inner
+              .carousel-item.active.img-center.justify-content-center.d-flex
+                %img.d-block.img-thumbnail.rounded.float-start{:alt => "Default Image",
+                :src => 'assets/pictures/default.jpg',
+                :title => "Default image",
+                :style => "width:200px;" }/
+            .img-left-side{style: "display: none;"}
+              %a.carousel-control-prev{:title => "list to previous image"}
+                %span.carousel-control-prev-icon{"aria-hidden" => "true"}
+                %span.visually-hidden Previous
+            .img-right-side{style: "display: none;"}
+              %a.carousel-control-next{:title => "list to next image"}
+                %span.carousel-control-next-icon{"aria-hidden" => "true"}
+                %span.visually-hidden Next

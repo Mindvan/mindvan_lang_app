@@ -1,23 +1,38 @@
--# %body
 %header
-  %nav.navbar.navbar-dark.bg-dark.navbar-expand-lg
-    .container-fluid
-      %button.navbar-toggler{"aria-controls" => "navbarTogglerDemo03", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-bs-target" => "#navbarTogglerDemo03", "data-bs-toggle" => "collapse", type: "button"}
-        %span.navbar-toggler-icon
+  %nav.navbar.navbar-default
+    .container-fluid.flex-nowrap
+      .navbar-header
+        %button.navbar-toggle.collapsed{type: "button", "data-toggle": "collapse", "data-target": "#alignment-example", "aria-expanded": "false"}
+          %span.sr-only
+          %span.icon-bar
+          %span.icon-bar
+          %span.icon-bar
+        %a.d-flex.align-items-center.justify-content-center.navbar-brand{"aria-current" => "page", href: index_path}= t('.home')
 
-      .d-flex
-        %a.navbar-brand.me-3.mb-1.d-flex.text-uppercase.align-items-center{:href => "#"}
-          %img{:alt => "Logo", :height => "30", :src => "assets/pictures/logo.svg", :width => "30"}/
-        #navbarTogglerDemo03.collapse.navbar-collapse
-
-          %ul.navbar-nav.me-auto.mb-2.mb-lg-0.d-flex.flex-row.gap-3
-            %li.nav-item
-              = link_to 'Ruby on Rails Website', 'http://rubyonrails.org', class: 'nav-link link-light'
-            %li.nav-item
-              = link_to 'Help', main_about_path, class: 'nav-link link-light'
-
-      %ul.navbar-nav.flex-row.gap-3
+      .collapse.navbar-collapse#alignment-example
+        %ul.nav.navbar-nav
+          %li.nav-item
+            %a.nav-link{href: help_path}= t('.help')
+            
+      %ul.navbar-nav.flex-row.d-none.d-md-flex.mt-2.align-items-center
+        %li.nav-item.me-3.me-lg-1.position-relative
+          = link_to image_tag("pictures/russian.png", alt: "", height: "auto", width: "20", class: "d-inline-block align-top me-2", title: "Русский" ),
+          locale: :ru, lass: "dropdown-item"
+        %li.nav-item.mb-2.mb-lg-0
+          = link_to image_tag("pictures/english.png", alt: "", height: "auto", width: "20", class: "d-inline-block align-top me-2", title: "English" ),
+          locale: :en, class: "dropdown-item"
         %li.nav-item.me-3.me-lg-1
-          %a.link-light{:href => "#"} Sign In
-        %li.nav-item.me-3.me-lg-1
-          %a.link-light{:href => "#"} Sign Up
+          %p.nav-link.me-2= I18n.locale  
+      
+      %ul.navbar-nav.flex-row.ml-auto.align-items-md-baseline.d-flex.gap-2
+        - if signed_in?
+          = gravatar_for current_user
+          %li.nav-item.logged.me-3.me-lg-1.mt-2
+            %p= link_to @current_user.email, current_user, class: "nav-link me-2", title: "Watch profile info"
+          %li.nav-item.me-3.me-lg-1.mt-3
+            = link_to t('.sign_out'), signout_path, method: "delete", class: "link-secondary"
+        - else
+          %li.nav-item.me-3.me-lg-1
+            = link_to t('.sign_in'), signin_path, class: "btn btn-outline-light me-2"
+          %li.nav-item.me-3.me-lg-1
+            = link_to t('.sign_up'), signup_path, class: "btn btn-outline-light"

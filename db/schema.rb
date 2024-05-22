@@ -35,6 +35,12 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_22_213545) do
     t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "password"
+    t.string "password_confirmation"
+    t.string "password_digest"
+    t.string "remember_token"
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["remember_token"], name: "index_users_on_remember_token"
   end
 
   create_table "values", force: :cascade do |t|
